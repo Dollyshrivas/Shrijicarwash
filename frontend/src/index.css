@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 96px;
+}
+
+.typing-cursor {
+	color: #f6e751;
+	animation: blink 800ms step-end infinite;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.typing-cursor {
+		animation: none;
+	}
+}
