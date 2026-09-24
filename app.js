@@ -7,7 +7,7 @@ PORT = 3000;
 //cors
 app.use(
   cors({
-    origin:"http://localhost:5173",
+    origin:"https://shrijicarwash.vercel.app/",
     credentials:true,
     methods:["GET","POST","PUT","DELETE"],
   })
