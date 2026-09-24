@@ -4,7 +4,7 @@ import basicWashImage from "../assets/Basic car wash.jpg";
 import premiumWashImage from "../assets/Primium wash.jpg";
 import interiorWashImage from "../assets/interior wash.jpg";
 import PressurecWashImage from "../assets/Pressure Wash.jpg";
-import BucketWashImage from "../assets/Bucket Wash.jpg";
+import BucketWashImage from "../assets/Bucket wash.jpg";
 import DeepWashImage from "../assets/Deep wash.jpg";
 import InteriorOnlyImage from "../assets/Interior Only.jpg";
 import ExteriorOnlyImage from "../assets/Exterior only.jpg";
