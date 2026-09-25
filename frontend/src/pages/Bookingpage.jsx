@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import { apiRequest } from "../lib/api";
 
 const servicePriceMap = {
   "Basic Cleaning": "₹399",
@@ -25,7 +26,9 @@ function Bookingpage() {
   const [selectedShift, setSelectedShift] = useState("Morning");
   const [selectedTime, setSelectedTime] = useState(shifts.Morning[0]);
   const [selectedService, setSelectedService] = useState(
-    availableServices.includes(requestedService) ? requestedService : availableServices[0]
+    availableServices.includes(requestedService)
+      ? requestedService
+      : availableServices[0]
   );
   const selectedPrice = servicePriceMap[selectedService] || "₹0";
   const [status, setStatus] = useState("");
@@ -44,25 +47,18 @@ function Bookingpage() {
     };
 
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL || "http://127.0.0.1:8000"}/api/bookings/`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            ...(localStorage.getItem("carwash_token")
-              ? { Authorization: `Bearer ${localStorage.getItem("carwash_token")}` }
-              : {}),
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Unable to create booking.");
-      }
+      const data = await apiRequest("/api/bookings/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(localStorage.getItem("carwash_token")
+            ? {
+                Authorization: `Bearer ${localStorage.getItem("carwash_token")}`,
+              }
+            : {}),
+        },
+        body: JSON.stringify(payload),
+      });
 
       form.reset();
       setStatus(data.message);
@@ -76,15 +72,15 @@ function Bookingpage() {
   return (
     <div className="bg-gradient-to-br from-[#420000] via-[#160000] to-black text-white min-h-screen px-4 py-10 flex justify-center items-center">
       <div className="bg-gradient-to-br from-[#241010] to-[#090909] border border-red-900/70 p-6 sm:p-8 rounded-2xl w-full max-w-[400px] shadow-2xl shadow-red-950/40">
-        
-          <h2 className="text-white text-3xl font-bold mb-2 text-center">
+        <h2 className="text-white text-3xl font-bold mb-2 text-center">
           Book Cleaning
         </h2>
 
-        <p className="text-red-200/70 text-center mb-6">Choose a service and reserve your preferred date.</p>
+        <p className="text-red-200/70 text-center mb-6">
+          Choose a service and reserve your preferred date.
+        </p>
 
         <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-          
           <input
             type="text"
             name="name"
@@ -122,7 +118,9 @@ function Bookingpage() {
               required
               className="p-3 rounded-lg bg-black/60 border text-white border-red-900 outline-none focus:border-red-400"
             >
-              {Object.keys(shifts).map((shift) => <option key={shift}>{shift}</option>)}
+              {Object.keys(shifts).map((shift) => (
+                <option key={shift}>{shift}</option>
+              ))}
             </select>
 
             <select
@@ -132,24 +130,43 @@ function Bookingpage() {
               required
               className="p-3 rounded-lg bg-black/60 border text-white border-red-900 outline-none focus:border-red-400"
             >
-              {shifts[selectedShift].map((time) => <option key={time} value={time}>{time}</option>)}
+              {shifts[selectedShift].map((time) => (
+                <option key={time} value={time}>
+                  {time}
+                </option>
+              ))}
             </select>
           </div>
 
-          <select name="service" value={selectedService} onChange={(event) => setSelectedService(event.target.value)} required className="p-3 rounded-lg bg-black/60 border text-white border-red-900 outline-none focus:border-red-400">
-            {availableServices.map((service) => <option key={service}>{service}</option>)}
+          <select
+            name="service"
+            value={selectedService}
+            onChange={(event) => setSelectedService(event.target.value)}
+            required
+            className="p-3 rounded-lg bg-black/60 border text-white border-red-900 outline-none focus:border-red-400"
+          >
+            {availableServices.map((service) => (
+              <option key={service}>{service}</option>
+            ))}
           </select>
 
           <div className="rounded-lg border border-red-900 bg-black/40 p-3">
-            <p className="text-xs uppercase tracking-[2px] text-red-200/80">Selected price</p>
+            <p className="text-xs uppercase tracking-[2px] text-red-200/80">
+              Selected price
+            </p>
             <p className="text-2xl font-extrabold text-white">{selectedPrice}</p>
           </div>
 
-          <button disabled={isSubmitting} className="bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-600 hover:scale-105 transition disabled:opacity-60">
+          <button
+            disabled={isSubmitting}
+            className="bg-red-700 text-white py-3 rounded-lg font-bold hover:bg-red-600 hover:scale-105 transition disabled:opacity-60"
+          >
             {isSubmitting ? "Booking..." : "Book Appointment"}
           </button>
 
-          {status && <p className="text-center text-sm text-red-300">{status}</p>}
+          {status && (
+            <p className="text-center text-sm text-red-300">{status}</p>
+          )}
         </form>
       </div>
     </div>
