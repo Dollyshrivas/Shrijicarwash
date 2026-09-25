@@ -6,11 +6,9 @@ The platform allows customers to explore car wash services, create accounts, boo
 
 ---
 
-## 🌐 Live Project
+## 🌐 Live Domain
 
-**Frontend:** Add your Vercel/Render URL here
-
-**Backend API:** Add your Django backend URL here
+https://shrijicarwash.vercel.app/
 
 ---
 
@@ -89,34 +87,6 @@ The platform allows customers to explore car wash services, create accounts, boo
 
 ---
 
-## 📂 Project Structure
-
-```text
-car-wash/
-│
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── App.js
-│   │   └── index.js
-│   ├── package.json
-│   └── ...
-│
-├── backend/
-│   ├── manage.py
-│   ├── config/
-│   ├── api/
-│   ├── requirements.txt
-│   └── ...
-│
-└── README.md
-```
-
-> The exact folder structure may vary depending on your current project organization.
-
----
 
 ## ⚙️ Installation & Setup
 
@@ -162,55 +132,8 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
-
 ---
 
-## 🔑 Environment Variables
-
-Create a `.env` file inside the backend directory.
-
-Example:
-
-```env
-SECRET_KEY=your_secret_key
-DEBUG=True
-
-MONGODB_URI=your_mongodb_connection_string
-
-JWT_SECRET_KEY=your_jwt_secret
-```
-
-**Never commit your `.env` file to GitHub.**
-
-Make sure it is included in `.gitignore`:
-
-```gitignore
-.env
-venv/
-__pycache__/
-*.pyc
-```
-
----
-
-## 🗄️ Database Configuration
-
-The project uses **MongoDB** for storing application data.
-
-You can use:
-
-* Local MongoDB
-* MongoDB Atlas
-
-Add your MongoDB connection string to the environment variables.
-
-Example:
-
-```env
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/carwash
-```
-
----
 
 ## ▶️ Run the Backend
 
@@ -374,7 +297,7 @@ Planned improvements may include:
 
 ## 👩‍💻 Author
 
-**Dolly **
+# Dolly 
 
 Full-Stack Developer
 
