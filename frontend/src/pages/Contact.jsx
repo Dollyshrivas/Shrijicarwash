@@ -49,7 +49,7 @@ const Contact = () => {
           <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
 
           <p className="text-gray-200 mb-4">
-            📍 Address: Delhi, India
+            📍 Address: Ghaziabad, New Delhi
           </p>
 
           <p className="text-gray-200 mb-4">
