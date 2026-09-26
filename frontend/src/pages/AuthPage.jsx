@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { apiRequest } from "../lib/api";
+import { apiRequest } from "../api";
 
 function AuthPage() {
   const [mode, setMode] = useState("login");
