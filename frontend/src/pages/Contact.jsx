@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { apiRequest } from "../lib/api";
+import { apiRequest } from "../api";
 
 const Contact = () => {
   const [status, setStatus] = useState("");
