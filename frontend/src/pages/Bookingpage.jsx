@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { apiRequest } from "../lib/api";
+import { apiRequest } from "../api";
 
 const servicePriceMap = {
   "Basic Cleaning": "₹399",
