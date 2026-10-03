@@ -26,7 +26,7 @@ const About = () => {
           </h1>
 
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-red-50 leading-relaxed">
-            At <span className="font-bold text-white">ShrijiVCarWash</span>,
+            At <span className="font-bold text-white">ShrijiCarWash</span>,
             we combine professional expertise, premium products and attention
             to detail to give every vehicle the care it deserves.
           </p>
@@ -53,7 +53,7 @@ const About = () => {
             </h2>
 
             <p className="text-gray-600 text-lg leading-relaxed mb-5">
-              ShrijiVCarWash was created with a simple goal — to provide
+              ShrijiCarWash was created with a simple goal — to provide
               professional car cleaning and detailing services that vehicle
               owners can trust.
             </p>
