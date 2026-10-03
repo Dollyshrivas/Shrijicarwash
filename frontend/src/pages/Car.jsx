@@ -31,7 +31,6 @@ const services = [
     bookingName: "Premium Cleaning",
     price: "₹1499",
     desc: "Complete car care package with exterior wash, interior cleaning and waxing.",
-    icon: "🏆",
     image: premiumWashImage,
     features: ["Full Wash", "Interior Cleaning", "Premium Wax"],
     popular: true,
