@@ -74,9 +74,6 @@ const About = () => {
 
             <div className="bg-[#111111] rounded-3xl p-8 sm:p-10 md:p-14 text-white shadow-2xl">
 
-              <div className="text-6xl mb-8">
-                🚗
-              </div>
 
               <h3 className="text-3xl font-bold mb-4">
                 Driven By Quality
