@@ -17,10 +17,10 @@ const Navbar = () => {
   }, []);
 
   return (
-      <nav className="sticky top-0 z-50 bg-black text-black px-4 sm:px-6 lg:px-10 py-3 shadow-lg border-b-7 border-black">
-      <div className="flex justify-between items-center gap-4">
+      <nav className="sticky top-0 z-50 flex flex-wrap lg:flex-nowrap justify-between items-center bg-black text-black px-4 sm:px-6 lg:px-10 py-2 shadow-lg border-b-7 border-black">
+      <div className="flex w-full lg:w-auto justify-between items-center gap-4">
       <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 text-white">
-        <img src={logo} alt="ShrijiCarWash" className="h-14 w-14 rounded-full border-2 border-yellow-300 object-cover" />
+        <img src={logo} alt="ShrijiCarWash" className="h-12 w-12 shrink-0 aspect-square rounded-full border-2 border-yellow-300 object-cover" />
         <h1 className="text-2xl sm:text-3xl font-bold tracking-widest">
           Shriji<span className="text-yellow-500">CarWash</span>
         </h1>
@@ -37,7 +37,7 @@ const Navbar = () => {
       </button>
       </div>
 
-      <div className={`${isMenuOpen ? "flex" : "hidden"} lg:flex flex-col lg:flex-row gap-4 lg:gap-8 mt-4 lg:mt-0 text-white font-bold text-sm sm:text-base uppercase tracking-wider justify-center items-center`}>
+      <div className={`${isMenuOpen ? "flex" : "hidden"} w-full lg:w-auto lg:flex flex-col lg:flex-row gap-4 lg:gap-8 mt-2 lg:mt-0 text-white font-bold text-sm sm:text-base uppercase tracking-wider justify-center items-center`}>
         <a href="/#home" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 cursor-pointer">Home</a>
         <a href="/#services" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 cursor-pointer">Services</a>
         <a href="/#about" onClick={() => setIsMenuOpen(false)} className="hover:text-gray-400 cursor-pointer">About</a>
