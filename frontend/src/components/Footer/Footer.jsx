@@ -16,7 +16,7 @@ function Footer() {
             </Link>
 
             <p className="text-sm text-gray-400 leading-relaxed">
-              Your car deserves a best shine ✨ Professional car wash and detailing premium car pressure wash as bucket wash at your door step ✌🏻
+              Your car deserves a best shine  Professional car wash and detailing premium car pressure wash as bucket wash at your door step 
 
             </p>
           </div>
